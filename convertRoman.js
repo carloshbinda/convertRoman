@@ -1,3 +1,11 @@
+//This constants are used to manipulate the DOM of the index test page just to have an interface to 
+//ilustrate the use of the actual conversion script
+const answerDiv = document.querySelector('.answer');
+const answerParaghaph = document.createElement("P");
+const convertBtn = document.getElementById("convert-btn");
+const inputBox = document.getElementById("input");
+
+
 //The romanChar function receives a roman character and returns the
 //respective integer.
 function romanChar(roman) {
@@ -35,4 +43,10 @@ function convertRoman(roman) {
   }
   return sum;
 }
-console.log(convertRoman("IX"));
+
+
+function executeConversion(){
+  inputBox.value = convertRoman(inputBox.value);
+}
+
+convertBtn.addEventListener("click", executeConversion);
